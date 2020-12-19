@@ -1,7 +1,7 @@
 require 'ipaddr'
 
 class Like < ApplicationRecord
-  validates :ip_address, presence: true, length: {maximum: 15}
+  validates :ip_address, presence: true
   validates_uniqueness_of :message_id, scope: :ip_address
   validate :validate_ip_format
 
