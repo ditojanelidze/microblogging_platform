@@ -23,6 +23,7 @@ describe 'Messages', type: :request do
                      id: { type: :integer },
                      author: { type: :string },
                      message: { type: :string },
+                     likes: { type: :integer },
                      created_at: { type: :string }
                    }
                  }
@@ -59,7 +60,8 @@ describe 'Messages', type: :request do
                    properties: {
                      id: { type: :integer },
                      ip_address: { type: :string },
-                     message_id: { type: :integer }
+                     message_id: { type: :integer },
+                     created_at: { type: :string }
                    }
                  }
                }
@@ -106,6 +108,7 @@ describe 'Messages', type: :request do
                        id: { type: :integer },
                        author: { type: :string },
                        message: { type: :string },
+                       likes: { type: :integer },
                        created_at: { type: :string }
                      }
                    }

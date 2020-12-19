@@ -51,6 +51,9 @@
                     "message": {
                       "type": "string"
                     },
+                    "likes": {
+                      "type": "integer"
+                    },
                     "created_at": {
                       "type": "string"
                     }
@@ -112,6 +115,9 @@
                     },
                     "message_id": {
                       "type": "integer"
+                    },
+                    "created_at": {
+                      "type": "string"
                     }
                   }
                 }
@@ -173,6 +179,9 @@
                       },
                       "message": {
                         "type": "string"
+                      },
+                      "likes": {
+                        "type": "integer"
                       },
                       "created_at": {
                         "type": "string"
