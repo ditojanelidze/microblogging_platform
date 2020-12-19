@@ -23,6 +23,8 @@ build-iPhoneSimulator/
 /.bundle/
 /vendor/bundle
 /lib/bundler/man/
-
+.idea/**
+.idea/*
+.idea/workspace.xml
 .rvmrc
 /config/application.yml

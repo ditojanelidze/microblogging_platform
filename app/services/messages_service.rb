@@ -24,6 +24,13 @@ class MessagesService
                            .limit(5)
   end
 
+  def messages_feed
+    @messages = Message.select("id, author, message, likes, created_at")
+                       .order("created_at DESC")
+                       .page(@params[:page].to_i)
+                       .per(PAGE_LIMIT)
+  end
+
   def create_json_view
     {message: @message.as_json(except: [:lock_version])}
   end
@@ -36,6 +43,9 @@ class MessagesService
     {messages: @top_messages}
   end
 
+  def messages_feed_json_view
+    {messages: @messages}
+  end
   private
 
   def find_message
@@ -47,16 +57,18 @@ class MessagesService
     return if @errors.any?
     ActiveRecord::Base.transaction do
       @like = Like.create(@params)
-      begin
-        @message.increase_likes
-      rescue ActiveRecord::StaleObjectError
-        @message.reload
-        retry
-      end
+      increase_message_likes
       raise ActiveRecord::Rollback if @like.errors.any? || @message.errors.any?
     end
     set_errors(@like)
     set_errors(@message)
+  end
+
+  def increase_message_likes
+      @message.increase_likes
+    rescue ActiveRecord::StaleObjectError
+      @message.reload
+      retry
   end
 
   def set_errors(object)

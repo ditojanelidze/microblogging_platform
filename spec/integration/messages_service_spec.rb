@@ -123,4 +123,39 @@ describe 'Messages', type: :request do
       end
     end
   end
+
+  path '/messages_feed/{page}' do
+    get 'Get Messages Feed' do
+      tags 'Message'
+      consumes 'application/json'
+
+      parameter name: :page, in: :path, type: :integer
+
+      response '200', 'OK' do
+        schema type: :object,
+               properties: {
+                 status_code: { type: :integer },
+                 messages: {
+                   type: :array,
+                   items: {
+                     type: :object,
+                     properties: {
+                       id: { type: :integer },
+                       author: { type: :string },
+                       message: { type: :string },
+                       likes: { type: :integer },
+                       created_at: { type: :string }
+                     }
+                   }
+                 }
+               }
+        before do
+          @message = Message.create(author: "Ruby", message: "Hello World")
+        end
+
+        let(:period) { "week" }
+        run_test!
+      end
+    end
+  end
 end

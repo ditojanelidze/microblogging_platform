@@ -17,6 +17,12 @@ class MessagesController < ApplicationController
     json_response service
   end
 
+  def messages_feed
+    service = MessagesService.new(messages_feed_params)
+    service.messages_feed
+    json_response service
+  end
+
   private
 
   def message_params
@@ -29,5 +35,9 @@ class MessagesController < ApplicationController
 
   def top_messages_params
     params.permit(:period)
+  end
+
+  def messages_feed_params
+    params.permit(:page)
   end
 end

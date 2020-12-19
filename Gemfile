@@ -20,3 +20,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rswag'
 gem 'rspec'
 gem 'rspec-rails'
+gem 'kaminari'
