@@ -23,6 +23,14 @@ RSpec.describe Like do
     expect(like.errors.messages[:ip_address].any?).to be true
   end
 
+  it "should generate ip address taken error" do
+    ip = Faker::Internet::ip_v4_address
+    Like.create(ip_address: ip, message_id: @message.id)
+    like = Like.create(ip_address: ip, message_id: @message.id)
+    expect(Like.count).to eq(1)
+    expect(like.errors.messages[:message_id].any?).to be true
+  end
+
   it "should generate message must exist error" do
     like = Like.create(ip_address: Faker::Internet.ip_v4_address, message_id: rand(1000))
     expect(Like.count).to eq(0)

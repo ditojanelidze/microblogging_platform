@@ -106,3 +106,15 @@ Completed 200 OK in 10ms (Views: 4.7ms | ActiveRecord: 3.3ms)
   [1m[36mLike Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."message_id" = $1 AND "likes"."ip_address" = $2 LIMIT $3[0m  [["message_id", 7], ["ip_address", "127.0.0.1"], ["LIMIT", 1]]
   [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
   [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "messages" ("author", "message", "created_at", "lock_version") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["author", "Cathern"], ["message", "I'll be in Hell before you start breakfast! Let her rip!"], ["created_at", "2020-12-19 17:18:35.231216"], ["lock_version", 0]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLike Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."message_id" = $1 AND "likes"."ip_address" = $2 LIMIT $3[0m  [["message_id", 6], ["ip_address", "51.77.91.239"], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mLike Create (0.8ms)[0m  [1m[32mINSERT INTO "likes" ("ip_address", "message_id", "created_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ip_address", "51.77.91.239"], ["message_id", 6], ["created_at", "2020-12-19 17:18:43.726528"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLike Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."message_id" = $1 AND "likes"."ip_address" = $2 LIMIT $3[0m  [["message_id", 6], ["ip_address", "51.77.91.239"], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m

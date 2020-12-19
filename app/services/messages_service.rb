@@ -52,6 +52,8 @@ class MessagesService
       end
       raise ActiveRecord::Rollback if @like.errors.any? || @message.errors.any?
     end
+    set_errors(@like)
+    set_errors(@message)
   end
 
   def set_errors(object)
