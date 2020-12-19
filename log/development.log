@@ -1,0 +1,316 @@
+Started GET "/api-docs/index.html" for ::1 at 2020-12-19 18:03:01 +0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/dito/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Started GET "/api-docs/swagger-ui.css" for ::1 at 2020-12-19 18:03:01 +0400
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for ::1 at 2020-12-19 18:03:01 +0400
+Started GET "/api-docs/swagger-ui-bundle.js" for ::1 at 2020-12-19 18:03:01 +0400
+Started GET "/api-docs/v1/swagger.json" for ::1 at 2020-12-19 18:03:01 +0400
+Started POST "/message" for ::1 at 2020-12-19 18:03:54 +0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/dito/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Error occurred while parsing request parameters.
+Contents:
+
+author=ditooo&message=Hello%20fellas
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at 'author=ditooo&message=Hello%20fellas'):
+  
+actionpack (5.2.4.4) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.4.4) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.2.3) lib/rack/request.rb:69:in `fetch'
+rack (2.2.3) lib/rack/request.rb:69:in `fetch_header'
+actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.4.4) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.4.4) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.4.4) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.4.4) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.4) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.4.4) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.4) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api-docs/index.html" for ::1 at 2020-12-19 18:05:54 +0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/dito/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for ::1 at 2020-12-19 18:05:54 +0400
+Started GET "/api-docs/swagger-ui-bundle.js" for ::1 at 2020-12-19 18:05:54 +0400
+Started GET "/api-docs/swagger-ui.css" for ::1 at 2020-12-19 18:05:54 +0400
+Started GET "/api-docs/v1/swagger.json" for ::1 at 2020-12-19 18:05:54 +0400
+Started GET "/api-docs/favicon-32x32.png" for ::1 at 2020-12-19 18:05:54 +0400
+Started POST "/message" for ::1 at 2020-12-19 18:06:05 +0400
+Processing by MessagesController#create as JSON
+  Parameters: {"authr"=>"dito", "message"=>"hello fellas"}
+Unpermitted parameter: :authr
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `create_message' for #<MessagesService:0x0000556092406b70>):
+  
+app/controllers/messages_controller.rb:4:in `create'
+Started POST "/message" for ::1 at 2020-12-19 18:06:37 +0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/dito/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by MessagesController#create as JSON
+  Parameters: {"authr"=>"dito", "message"=>"hello fellas"}
+Unpermitted parameter: :authr
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/messages_service.rb:8
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/services/messages_service.rb:8
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 3.1ms)
+
+
+  
+NameError (undefined local variable or method `message' for #<MessagesService:0x0000556978c0afa8>
+Did you mean?  @message):
+  
+app/services/messages_service.rb:9:in `create'
+app/controllers/messages_controller.rb:4:in `create'
+Started POST "/message" for ::1 at 2020-12-19 18:07:01 +0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/dito/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by MessagesController#create as JSON
+  Parameters: {"authr"=>"dito", "message"=>"hello fellas"}
+Unpermitted parameter: :authr
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/messages_service.rb:10
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/services/messages_service.rb:10
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 3.1ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 2)):
+  
+app/services/messages_service.rb:30:in `set_errors'
+app/services/messages_service.rb:11:in `create'
+app/controllers/messages_controller.rb:4:in `create'
+Started POST "/message" for ::1 at 2020-12-19 18:07:35 +0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/dito/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by MessagesController#create as JSON
+  Parameters: {"authr"=>"dito", "message"=>"hello fellas"}
+Unpermitted parameter: :authr
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/messages_service.rb:10
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/services/messages_service.rb:10
+Completed   in 38875ms (ActiveRecord: 4.2ms)
+
+
+Started POST "/message" for ::1 at 2020-12-19 18:08:18 +0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/dito/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by MessagesController#create as JSON
+  Parameters: {"authr"=>"dito", "message"=>"hello fellas"}
+Unpermitted parameter: :authr
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/messages_service.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/services/messages_service.rb:10
+Completed 500 Internal Server Error in 11477ms (ActiveRecord: 3.4ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 2)):
+  
+app/services/messages_service.rb:31:in `set_errors'
+app/services/messages_service.rb:11:in `create'
+app/controllers/messages_controller.rb:4:in `create'
+Started POST "/message" for ::1 at 2020-12-19 18:08:43 +0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/dito/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by MessagesController#create as JSON
+  Parameters: {"authr"=>"dito", "message"=>"hello fellas"}
+Unpermitted parameter: :authr
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/messages_service.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/services/messages_service.rb:10
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 3.0ms)
+
+
+  
+NameError (uninitialized constant ApplicationController::ERROR_STATUS_CODE):
+  
+app/controllers/application_controller.rb:4:in `json_response'
+app/controllers/messages_controller.rb:5:in `create'
+Started POST "/message" for ::1 at 2020-12-19 18:09:56 +0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/dito/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by MessagesController#create as JSON
+  Parameters: {"authr"=>"dito", "message"=>"hello fellas"}
+Unpermitted parameter: :authr
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/messages_service.rb:10
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/services/messages_service.rb:10
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/message" for ::1 at 2020-12-19 18:10:10 +0400
+Processing by MessagesController#create as JSON
+  Parameters: {"authr"=>"dito", "message"=>"hello fellas"}
+Unpermitted parameter: :authr
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/messages_service.rb:10
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/services/messages_service.rb:10
+Completed 200 OK in 10646ms (Views: 0.6ms | ActiveRecord: 9.3ms)
+
+
+Started POST "/message" for ::1 at 2020-12-19 18:10:29 +0400
+Processing by MessagesController#create as JSON
+  Parameters: {"author"=>"dito", "message"=>"hello fellas"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/messages_service.rb:10
+  [1m[36mMessage Create (0.7ms)[0m  [1m[32mINSERT INTO "messages" ("author", "message", "created_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["author", "dito"], ["message", "hello fellas"], ["created_at", "2020-12-19 14:10:29.309874"]]
+  ↳ app/services/messages_service.rb:10
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/messages_service.rb:10
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 5.4ms)
+
+
+Started POST "/message" for ::1 at 2020-12-19 18:10:42 +0400
+Processing by MessagesController#create as JSON
+  Parameters: {"author"=>"dito", "message"=>"hello fellas"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/messages_service.rb:10
+  [1m[36mMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("author", "message", "created_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["author", "dito"], ["message", "hello fellas"], ["created_at", "2020-12-19 14:10:42.645977"]]
+  ↳ app/services/messages_service.rb:10
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/messages_service.rb:10
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/message" for ::1 at 2020-12-19 18:10:44 +0400
+Processing by MessagesController#create as JSON
+  Parameters: {"author"=>"dito", "message"=>"hello fellas"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/messages_service.rb:10
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("author", "message", "created_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["author", "dito"], ["message", "hello fellas"], ["created_at", "2020-12-19 14:10:44.006595"]]
+  ↳ app/services/messages_service.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/messages_service.rb:10
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/message" for ::1 at 2020-12-19 18:11:11 +0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/dito/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by MessagesController#create as JSON
+  Parameters: {"message"=>{}}
+Unpermitted parameter: :message
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/messages_service.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/services/messages_service.rb:10
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/message" for ::1 at 2020-12-19 18:11:50 +0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/dito/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by MessagesController#create as JSON
+  Parameters: {"message"=>{}}
+Unpermitted parameter: :message
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/messages_service.rb:10
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/services/messages_service.rb:10
+Completed 200 OK in 17ms (Views: 0.1ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/message/1/like" for ::1 at 2020-12-19 18:12:12 +0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/dito/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by MessagesController#like as JSON
+  Parameters: {"message_id"=>"1"}
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `parmas' for #<MessagesController:0x0000558be9375210>
+Did you mean?  params):
+  
+app/controllers/messages_controller.rb:21:in `like_params'
+app/controllers/messages_controller.rb:9:in `like'
+Started POST "/message/1/like" for ::1 at 2020-12-19 18:12:27 +0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/dito/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by MessagesController#like as JSON
+  Parameters: {"message_id"=>"1"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `params' for #<MessagesService:0x0000556588ac8fd0>
+Did you mean?  @params):
+  
+app/services/messages_service.rb:15:in `like'
+app/controllers/messages_controller.rb:10:in `like'
+Started POST "/message/1/like" for ::1 at 2020-12-19 18:12:40 +0400
+Processing by MessagesController#like as JSON
+  Parameters: {"message_id"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/messages_service.rb:15
+  [1m[36mLike Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."message_id" = $1 AND "likes"."ip_address" = $2 LIMIT $3[0m  [["message_id", 1], ["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/services/messages_service.rb:15
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/messages_service.rb:15
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("ip_address", "message_id", "created_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ip_address", "::1"], ["message_id", 1], ["created_at", "2020-12-19 14:12:40.341482"]]
+  ↳ app/services/messages_service.rb:15
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/messages_service.rb:15
+Completed 200 OK in 36ms (Views: 0.2ms | ActiveRecord: 8.9ms)
+
+
+Started POST "/message/1/like" for ::1 at 2020-12-19 18:12:42 +0400
+Processing by MessagesController#like as JSON
+  Parameters: {"message_id"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/messages_service.rb:15
+  [1m[36mLike Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."message_id" = $1 AND "likes"."ip_address" = $2 LIMIT $3[0m  [["message_id", 1], ["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/services/messages_service.rb:15
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/messages_service.rb:15
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/services/messages_service.rb:15
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
