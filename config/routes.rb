@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   mount Rswag::Api::Engine => '/api-docs'
   post 'message', to: 'messages#create'
   post 'message/:message_id/like', to: 'messages#like'
+  get  'top_messages/:period', to: 'messages#top_messages'
 end

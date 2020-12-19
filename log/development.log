@@ -1,0 +1,91 @@
+Started GET "/api-docs/index.html" for ::1 at 2020-12-19 20:25:41 +0400
+Started GET "/api-docs/swagger-ui.css" for ::1 at 2020-12-19 20:25:41 +0400
+Started GET "/api-docs/swagger-ui-bundle.js" for ::1 at 2020-12-19 20:25:41 +0400
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for ::1 at 2020-12-19 20:25:41 +0400
+Started GET "/api-docs/v1/swagger.json" for ::1 at 2020-12-19 20:25:42 +0400
+Started GET "/api-docs/favicon-32x32.png" for ::1 at 2020-12-19 20:25:42 +0400
+Started GET "/message/top_messages/week" for ::1 at 2020-12-19 20:25:46 +0400
+  
+ActionController::RoutingError (No route matches [GET] "/message/top_messages/week"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api-docs/index.html" for ::1 at 2020-12-19 20:26:43 +0400
+Started GET "/api-docs/swagger-ui.css" for ::1 at 2020-12-19 20:26:43 +0400
+Started GET "/api-docs/swagger-ui-bundle.js" for ::1 at 2020-12-19 20:26:43 +0400
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for ::1 at 2020-12-19 20:26:43 +0400
+Started GET "/api-docs/v1/swagger.json" for ::1 at 2020-12-19 20:26:43 +0400
+Started GET "/api-docs/favicon-32x32.png" for ::1 at 2020-12-19 20:26:43 +0400
+Started GET "/top_messages/week" for ::1 at 2020-12-19 20:26:47 +0400
+  
+ActionController::RoutingError (No route matches [GET] "/top_messages/week"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/top_messages/week" for ::1 at 2020-12-19 20:27:10 +0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/dito/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by MessagesController#top_messages as JSON
+  Parameters: {"period"=>"week"}
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE (creted_at > '2020-12-18 20:00:00') ORDER BY "messages"."likes" ASC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.7ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "creted_at" does not exist
+LINE 1: SELECT  "messages".* FROM "messages" WHERE (creted_at > '202...
+                                                    ^
+HINT:  Perhaps you meant to reference the column "messages.created_at".
+: SELECT  "messages".* FROM "messages" WHERE (creted_at > '2020-12-18 20:00:00') ORDER BY "messages"."likes" ASC LIMIT $1):
+  
+app/controllers/application_controller.rb:6:in `json_response'
+app/controllers/messages_controller.rb:17:in `top_messages'
+Started GET "/top_messages/week" for ::1 at 2020-12-19 20:27:25 +0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/dito/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by MessagesController#top_messages as JSON
+  Parameters: {"period"=>"week"}
+  [1m[36mMessage Load (0.9ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE (created_at > '2020-12-18 20:00:00') ORDER BY "messages"."likes" ASC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 10ms (Views: 4.7ms | ActiveRecord: 3.3ms)
+
+

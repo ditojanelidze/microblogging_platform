@@ -16,12 +16,21 @@ class MessagesService
     create_like
   end
 
+  def top_messages
+    date_param = @params[:period] == :week ? (DateTime.now - 1.week).beginning_of_day : DateTime.now.beginning_of_day
+    @top_messages = Message.where("created_at > ?", date_param).order(:likes).limit(5)
+  end
+
   def create_json_view
     {message: @message.as_json}
   end
 
   def like_json_view
     {like: @like.as_json}
+  end
+
+  def top_messages_json_view
+    {messages: @top_messages}
   end
 
   private

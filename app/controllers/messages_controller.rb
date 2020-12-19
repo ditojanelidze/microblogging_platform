@@ -11,6 +11,12 @@ class MessagesController < ApplicationController
     json_response service
   end
 
+  def top_messages
+    service = MessagesService.new(top_messages_params)
+    service.top_messages
+    json_response service
+  end
+
   private
 
   def message_params
@@ -19,5 +25,9 @@ class MessagesController < ApplicationController
 
   def like_params
     params.permit(:message_id).merge(ip_address: request.remote_ip)
+  end
+
+  def top_messages_params
+    params.permit(:period)
   end
 end

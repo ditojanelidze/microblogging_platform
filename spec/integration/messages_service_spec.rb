@@ -86,4 +86,38 @@ describe 'Messages', type: :request do
       end
     end
   end
+
+  path '/top_messages/{period}' do
+    get 'Get Top Five Message Of Period' do
+      tags 'Message'
+      consumes 'application/json'
+
+      parameter name: :period, in: :path
+
+      response '200', 'OK' do
+        schema type: :object,
+               properties: {
+                 status_code: { type: :integer },
+                 messages: {
+                   type: :array,
+                   items: {
+                     type: :object,
+                     properties: {
+                       id: { type: :integer },
+                       author: { type: :string },
+                       message: { type: :string },
+                       created_at: { type: :string }
+                     }
+                   }
+                 }
+               }
+        before do
+          @message = Message.create(author: "Ruby", message: "Hello World")
+        end
+
+        let(:period) { "week" }
+        run_test!
+      end
+    end
+  end
 end
