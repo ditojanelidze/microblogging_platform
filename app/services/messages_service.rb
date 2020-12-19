@@ -12,8 +12,8 @@ class MessagesService
   end
 
   def like
-    @like = Like.create(@params)
-    set_errors(@like)
+    find_message
+    create_like
   end
 
   def create_json_view
@@ -25,6 +25,25 @@ class MessagesService
   end
 
   private
+
+  def find_message
+    @message = Message.find_by(id: @params[:message_id])
+    @errors << "Message not found" if @message.nil?
+  end
+
+  def create_like
+    return if @errors.any?
+    ActiveRecord::Base.transaction do
+      @like = Like.create(@params)
+      begin
+        @message.increase_likes
+      rescue ActiveRecord::StaleObjectError
+        @message.reload
+        retry
+      end
+      raise ActiveRecord::Rollback if @like.errors.any? || @message.errors.any?
+    end
+  end
 
   def set_errors(object)
     @errors.concat(object.errors.full_messages)
