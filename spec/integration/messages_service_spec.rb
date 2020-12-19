@@ -153,7 +153,7 @@ describe 'Messages', type: :request do
           @message = Message.create(author: "Ruby", message: "Hello World")
         end
 
-        let(:period) { "week" }
+        let(:page) { 1 }
         run_test!
       end
     end
