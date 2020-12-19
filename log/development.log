@@ -314,3 +314,29 @@ Processing by MessagesController#like as JSON
 Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 1.4ms)
 
 
+Started POST "/message" for ::1 at 2020-12-19 18:26:27 +0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/dito/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by MessagesController#create as JSON
+  Parameters: {"message"=>{}}
+Unpermitted parameter: :message
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/messages_service.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/services/messages_service.rb:10
+Completed 200 OK in 23ms (Views: 0.2ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/message" for ::1 at 2020-12-19 18:27:14 +0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/dito/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by MessagesController#create as JSON
+  Parameters: {"message"=>{}}
+Unpermitted parameter: :message
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/messages_service.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/services/messages_service.rb:10
+Completed 400 Bad Request in 19ms (Views: 0.2ms | ActiveRecord: 3.8ms)
+
+

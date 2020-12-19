@@ -9,3 +9,144 @@
   [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started POST "/message" for 127.0.0.1 at 2020-12-19 18:23:41 +0400
+Processing by MessagesController#create as HTML
+  Parameters: {"author"=>"Ruby", "message"=>"Hello World"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMessage Create (0.7ms)[0m  [1m[32mINSERT INTO "messages" ("author", "message", "created_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["author", "Ruby"], ["message", "Hello World"], ["created_at", "2020-12-19 14:23:41.408618"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 3.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/message" for 127.0.0.1 at 2020-12-19 18:23:41 +0400
+Processing by MessagesController#create as HTML
+  Parameters: {"author"=>"", "message"=>""}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("author", "message", "created_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["author", "Ruby"], ["message", "Hello World"], ["created_at", "2020-12-19 14:23:41.419462"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/message/2/like" for 127.0.0.1 at 2020-12-19 18:23:41 +0400
+Processing by MessagesController#like as HTML
+  Parameters: {"message_id"=>"2", "message"=>{}}
+Unpermitted parameter: :message
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLike Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."message_id" = $1 AND "likes"."ip_address" = $2 LIMIT $3[0m  [["message_id", 2], ["ip_address", "127.0.0.1"], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("ip_address", "message_id", "created_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ip_address", "127.0.0.1"], ["message_id", 2], ["created_at", "2020-12-19 14:23:41.436412"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 3.8ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("author", "message", "created_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["author", "Ruby"], ["message", "Hello World"], ["created_at", "2020-12-19 14:23:41.441131"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/message/4/like" for 127.0.0.1 at 2020-12-19 18:23:41 +0400
+Processing by MessagesController#like as HTML
+  Parameters: {"message_id"=>"4", "message"=>{}}
+Unpermitted parameter: :message
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLike Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."message_id" = $1 AND "likes"."ip_address" = $2 LIMIT $3[0m  [["message_id", 4], ["ip_address", "127.0.0.1"], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started POST "/message" for 127.0.0.1 at 2020-12-19 18:25:02 +0400
+Processing by MessagesController#create as HTML
+  Parameters: {"author"=>"Ruby", "message"=>"Hello World"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "messages" ("author", "message", "created_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["author", "Ruby"], ["message", "Hello World"], ["created_at", "2020-12-19 14:25:02.416384"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 3.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/message" for 127.0.0.1 at 2020-12-19 18:25:02 +0400
+Processing by MessagesController#create as HTML
+  Parameters: {"author"=>nil, "message"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("author", "message", "created_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["author", "Ruby"], ["message", "Hello World"], ["created_at", "2020-12-19 14:25:02.427059"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/message/5/like" for 127.0.0.1 at 2020-12-19 18:25:02 +0400
+Processing by MessagesController#like as HTML
+  Parameters: {"message_id"=>"5", "message"=>{}}
+Unpermitted parameter: :message
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLike Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."message_id" = $1 AND "likes"."ip_address" = $2 LIMIT $3[0m  [["message_id", 5], ["ip_address", "127.0.0.1"], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("ip_address", "message_id", "created_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ip_address", "127.0.0.1"], ["message_id", 5], ["created_at", "2020-12-19 14:25:02.443599"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 3.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("author", "message", "created_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["author", "Ruby"], ["message", "Hello World"], ["created_at", "2020-12-19 14:25:02.447281"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/message/7/like" for 127.0.0.1 at 2020-12-19 18:25:02 +0400
+Processing by MessagesController#like as HTML
+  Parameters: {"message_id"=>"7", "message"=>{}}
+Unpermitted parameter: :message
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLike Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."message_id" = $1 AND "likes"."ip_address" = $2 LIMIT $3[0m  [["message_id", 7], ["ip_address", "127.0.0.1"], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started POST "/message" for 127.0.0.1 at 2020-12-19 18:27:18 +0400
+Processing by MessagesController#create as HTML
+  Parameters: {"author"=>"Ruby", "message"=>"Hello World"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("author", "message", "created_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["author", "Ruby"], ["message", "Hello World"], ["created_at", "2020-12-19 14:27:18.897687"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 3.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/message" for 127.0.0.1 at 2020-12-19 18:27:18 +0400
+Processing by MessagesController#create as HTML
+  Parameters: {"author"=>nil, "message"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("author", "message", "created_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["author", "Ruby"], ["message", "Hello World"], ["created_at", "2020-12-19 14:27:18.909737"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/message/8/like" for 127.0.0.1 at 2020-12-19 18:27:18 +0400
+Processing by MessagesController#like as HTML
+  Parameters: {"message_id"=>"8", "message"=>{}}
+Unpermitted parameter: :message
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLike Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."message_id" = $1 AND "likes"."ip_address" = $2 LIMIT $3[0m  [["message_id", 8], ["ip_address", "127.0.0.1"], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("ip_address", "message_id", "created_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ip_address", "127.0.0.1"], ["message_id", 8], ["created_at", "2020-12-19 14:27:18.925988"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 3.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("author", "message", "created_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["author", "Ruby"], ["message", "Hello World"], ["created_at", "2020-12-19 14:27:18.929935"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/message/10/like" for 127.0.0.1 at 2020-12-19 18:27:18 +0400
+Processing by MessagesController#like as HTML
+  Parameters: {"message_id"=>"10", "message"=>{}}
+Unpermitted parameter: :message
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLike Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."message_id" = $1 AND "likes"."ip_address" = $2 LIMIT $3[0m  [["message_id", 10], ["ip_address", "127.0.0.1"], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 3ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
